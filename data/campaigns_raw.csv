@@ -1,0 +1,12 @@
+campaign_id,campaign_name,channel,spend,impressions,clicks,start_date,end_date
+C001,Summer Sale 2026, Meta ,1250.00,45000,1800,2026-06-01,2026-06-15
+C002,Google Search - Electronics,google ads,3400.50,82000,4100,2026-06-05,2026-06-30
+C003,Email Newsletter Blast,Email,150.00,12000,950,2026-06-10,2026-06-12
+C004,Retargeting - Cart Abandoners,META,850.75,28000,1400,2026-06-01,2026-06-25
+C005,Influencer Unboxing Tech,Influencer,2500.00,110000,3800,2026-06-15,2026-06-22
+C006,TikTok Viral Challenge,tiktok,1800.00,95000,2850,2026-06-18,2026-06-28
+C007,YouTube Pre-Roll Tech Review,YouTube,4200.00,150000,5250,2026-06-01,2026-06-30
+C008,Fall Fashion Launch, Meta ,950.00,32000,1120,2026-07-01,2026-07-15
+C009,Google Search - Software,google ads,2100.25,54000,2430,2026-07-05,2026-07-20
+C010,VIP Customer Reward Email,Email,75.00,8500,720,2026-07-10,2026-07-11
+C010,VIP Customer Reward Email,Email,75.00,8500,720,2026-07-10,2026-07-11

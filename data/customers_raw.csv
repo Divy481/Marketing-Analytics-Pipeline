@@ -1,0 +1,27 @@
+customer_id,campaign_id,name,email,signup_date,converted,order_value
+U1001,C001,Alice Smith, alice.smith@example.com ,2026-06-02,TRUE,149.99
+U1002,C001,Bob Johnson,bob.j@example.com,2026-06-03,TRUE,89.50
+U1003,C001,Charlie Brown,charlie@example.com,2026-06-04,FALSE,0.00
+U1004,C002,Diana Prince,diana.p@example.com,2026-06-06,TRUE,299.00
+U1005,C002,Ethan Hunt,ethan@example.com,2026-06-07,TRUE,450.00
+U1006,C002,Fiona Gallagher,fiona@example.com,2026-06-08,FALSE,0.00
+U1007,C003,George Clark,george@example.com,2026-06-11,TRUE,75.25
+U1008,C003,Hannah Abbott,hannah@example.com,2026-06-11,TRUE,120.00
+U1009,C004,Ian Malcolm,ian@example.com,2026-06-02,TRUE,210.50
+U1010,C004,Julia Roberts,julia@example.com,2026-06-05,TRUE,180.00
+U1011,C005,Kevin Spacey,kevin@example.com,2026-06-16,TRUE,350.00
+U1012,C005,Laura Croft,laura@example.com,2026-06-17,TRUE,520.00
+U1013,C006,Mike Ross,mike@example.com,2026-06-19,TRUE,95.00
+U1014,C006,Nina Nina,nina@example.com,2026-06-20,FALSE,
+U1015,C007,Oscar Wilde,oscar@example.com,2026-06-02,TRUE,620.00
+U1016,C007,Penelope Cruz,penelope@example.com,2026-06-10,TRUE,410.00
+U1017,C008,Quentin Tarantino,quentin@example.com,2026-07-02,TRUE,130.00
+U1018,C009,Rachel Green,rachel@example.com,2026-07-06,TRUE,275.00
+U1019,C009,Steve Rogers,steve@example.com,2026-07-08,TRUE,310.00
+U1020,C010,Tony Stark,tony@example.com,2026-07-10,TRUE,850.00
+U1021,C001,Bruce Wayne,bruce@example.com,2026-06-05,TRUE,199.99
+U1022,C002,Clark Kent,clark@example.com,2026-06-12,TRUE,340.00
+U1023,C005,Peter Parker,peter@example.com,2026-06-18,TRUE,115.00
+U1024,C007,Wanda Maximoff,wanda@example.com,2026-06-22,TRUE,490.00
+U1025,C006,Barry Allen,barry@example.com,2026-06-21,TRUE,85.50
+U1025,C006,Barry Allen,barry@example.com,2026-06-21,TRUE,85.50
