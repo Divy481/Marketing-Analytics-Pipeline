@@ -14,7 +14,6 @@ def test_clean_campaigns():
             "start_date": "2026-06-01",
             "end_date": "2026-06-10"
         },
-        # Duplicate entry
         {
             "campaign_id": "C100",
             "campaign_name": "Test Meta Ad",
@@ -29,7 +28,6 @@ def test_clean_campaigns():
     
     cleaned = clean_campaigns(raw_data)
     
-    # Verify duplicates removed
     assert len(cleaned) == 1
     # Verify channel standardized
     assert cleaned.iloc[0]['channel'] == "Meta"

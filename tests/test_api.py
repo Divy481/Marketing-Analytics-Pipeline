@@ -2,7 +2,6 @@ import os
 import pytest
 from fastapi.testclient import TestClient
 
-# Set sqlite DB for testing
 os.environ["DATABASE_URL"] = "sqlite:///./test_api.db"
 
 from run_pipeline import run_pipeline
@@ -12,10 +11,8 @@ client = TestClient(app)
 
 @pytest.fixture(scope="module", autouse=True)
 def setup_test_db():
-    # Run pipeline on sqlite test db before tests
     run_pipeline("sqlite:///./test_api.db")
     yield
-    # Clean up test DB after test execution
     if os.path.exists("./test_api.db"):
         os.remove("./test_api.db")
 

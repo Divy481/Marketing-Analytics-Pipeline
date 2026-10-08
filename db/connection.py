@@ -19,16 +19,13 @@ def get_database_url() -> str:
     db_port = os.getenv("POSTGRES_PORT", "5432")
     db_name = os.getenv("POSTGRES_DB", "marketing_db")
     
-    # If POSTGRES_HOST is set (e.g. inside Docker or specified environment), connect to Postgres
     if db_host:
         return f"postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
     
-    # Default to SQLite database for local execution without external DB container
     return "sqlite:///./marketing.db"
 
 def get_db_engine(db_url: str = None):
     url = db_url or get_database_url()
-    # If using SQLite (e.g. for testing), connect with appropriate arguments
     if url.startswith("sqlite"):
         return create_engine(url, connect_args={"check_same_thread": False})
     return create_engine(url, pool_pre_ping=True)
@@ -50,7 +47,6 @@ def execute_sql_file(file_path: str, engine=None):
         sql_script = f.read()
 
     with engine.connect() as connection:
-        # Split statements by semicolon for execution if using sqlite or postgres raw connection
         statements = [stmt.strip() for stmt in sql_script.split(";") if stmt.strip()]
         for stmt in statements:
             connection.execute(text(stmt))

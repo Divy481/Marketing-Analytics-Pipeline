@@ -13,9 +13,6 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# ------------------------------------------------------------------------------
-# Pydantic Schemas for API Documentation & Validation
-# ------------------------------------------------------------------------------
 class CampaignMetricSchema(BaseModel):
     campaign_id: str
     campaign_name: str
@@ -60,22 +57,17 @@ class ChannelPerformanceSchema(BaseModel):
     avg_conversion_rate: float
     channel_roas: float
 
-# Helper to fetch data into DataFrames or dicts
 def query_db(query_str: str, params: dict = None) -> pd.DataFrame:
     engine = get_db_engine()
     try:
         with engine.connect() as conn:
             return pd.read_sql(text(query_str), con=conn, params=params or {})
     except Exception as e:
-        # If table doesn't exist yet, trigger pipeline once and retry
         print(f"[API DB NOTICE] Table missing or query error: {e}. Executing ETL pipeline...")
         run_pipeline()
         with engine.connect() as conn:
             return pd.read_sql(text(query_str), con=conn, params=params or {})
 
-# ------------------------------------------------------------------------------
-# API Endpoints
-# ------------------------------------------------------------------------------
 @app.get("/", tags=["Health"])
 def root():
     return {
@@ -105,7 +97,6 @@ def get_executive_summary():
     total_conversions = df_metrics['conversions'].sum()
     overall_conv_rate = float(round((total_conversions / total_clicks) * 100, 2)) if total_clicks > 0 else 0.0
     
-    # Top performing channel by revenue
     channel_rev = df_metrics.groupby('channel')['total_revenue'].sum()
     top_channel = channel_rev.idxmax() if not channel_rev.empty else "N/A"
     
